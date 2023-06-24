@@ -1,0 +1,145 @@
+.App {
+  text-align: center;
+  overflow-y: hidden;
+ 
+}
+
+.base{
+  z-index: 1;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  animation: colourChange 25s infinite;
+  background-image: url("../images/17503.jpg");
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  animation: zoom-in-zoom-out 15s ease infinite;
+}
+
+.everything-else{
+  z-index: 2;
+  position: relative;
+}
+
+
+.home{
+  color: black;
+}
+.home-body{
+  color: aliceblue;
+  display: grid;
+  grid-template-columns: repeat(3, 33.33vw);
+  grid-template-rows: repeat(3, 33.33vh);
+  height: 100vh;
+  width: 100vw;
+}
+
+.overview{
+  margin-left: 2vw;
+  width: fit-content;
+  text-align: left;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  text-shadow: 2px 2px 15px skyblue;
+  font-weight: bolder;
+}
+.overview h3{
+  animation: slide 3s ease forwards ;
+  
+  
+}
+.overview-body{
+  margin-top: 2vh;
+}
+
+.overview-image{
+  grid-column-start: 2;
+  margin-top: -40%;
+  margin-left: -50%;
+}
+.overview-body p:nth-child(even){
+  animation: slide-from-right 3s ease forwards;
+}
+.overview-body p:nth-child(odd){
+  animation: slide-up 3s ease forwards;
+}
+
+.avatar{
+  animation: fade-in 5s ease;
+  filter: drop-shadow(0 0 0.75rem rgb(78, 152, 242));
+  height: 20%;
+  
+}
+
+
+@keyframes colourChange{
+  0%{
+    background-color: rgb(43, 41, 43);
+  }
+
+  50%{
+    background-color: rgb(10, 81, 111);
+  }
+
+  100%{
+    background-color: rgb(43, 41, 43);
+  }
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes slide{
+  0%{
+    transform: translateX(120%);
+  }
+  100%{
+    transform: translateX(0%);
+   
+  }
+}
+
+@keyframes slide-up{
+  0%{
+    transform: translateY(100vh);
+  }
+  100%{
+    transform: translateY(0%);
+   
+  }
+}
+
+@keyframes slide-from-right{
+  0%{
+    transform: translateX(-200%);
+  }
+  100%{
+    transform: translateX(0%);
+   
+  }
+}
+
+@keyframes fade-in{
+  0%{
+    opacity: 0%;
+  }
+  45%{
+    opacity: 0%;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
